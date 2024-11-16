@@ -3,6 +3,7 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { Button, Grid, GridItem, Show, Text } from "@chakra-ui/react";
+import Navbar from "./Components/Navbar";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -15,8 +16,8 @@ function App() {
           lg: `"nav nav" "aside main"`,
         }}
       >
-        <GridItem bg={"red"} area={"nav"}>
-          navbar
+        <GridItem area={"nav"}>
+          <Navbar></Navbar>
         </GridItem>
 
         <GridItem
