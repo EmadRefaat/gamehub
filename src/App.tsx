@@ -20,17 +20,11 @@ function App() {
           <Navbar></Navbar>
         </GridItem>
 
-        <GridItem
-          display={{ base: "none", lg: "block" }}
-          bg={"green"}
-          area={"aside"}
-        >
+        <GridItem display={{ base: "none", lg: "block" }} area={"aside"}>
           Sidebar
         </GridItem>
 
-        <GridItem bg={"blue"} area={"main"}>
-          main{" "}
-        </GridItem>
+        <GridItem area={"main"}>main </GridItem>
       </Grid>
     </>
   );
