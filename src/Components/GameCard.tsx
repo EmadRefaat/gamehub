@@ -11,6 +11,7 @@ import {
 import { Game } from "../Hooks/usegames";
 import PlatformIcon from "./PlatformIcon";
 import CriticScore from "./CriticScore";
+import getCropedImageUrl from "../services/img-url";
 
 interface props {
   game: Game;
@@ -20,7 +21,10 @@ const GameCard = ({ game }: props) => {
     <>
       <CardRoot overflow={"hidden"}>
         <Box h={"130px"} overflow={"hidden"}>
-          <Image fit={"contain"} src={game.background_image}></Image>
+          <Image
+            fit={"contain"}
+            src={getCropedImageUrl(game.background_image)}
+          ></Image>
         </Box>
         <CardTitle fontSize={"sm"}>{game.name}</CardTitle>
         <CardBody>
