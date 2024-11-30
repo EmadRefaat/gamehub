@@ -33,18 +33,19 @@ const PlatformIcon = ({ platform }: props) => {
       {/* {platform.map((p) => (
         <Icon key={p.id} as={iconMap[p.slug]}></Icon>
       ))} */}
-
-      {platform.map((p) => {
-        const IconComponent = iconMap[p.slug]; // Resolve the icon
-        if (!IconComponent) return null; // Handle missing icons gracefully
-        return (
-          <>
-            <Icon key={p.id}>
-              <IconComponent />
-            </Icon>
-          </>
-        );
-      })}
+      <Text>
+        {platform.map((p) => {
+          const IconComponent = iconMap[p.slug]; // Resolve the icon
+          if (!IconComponent) return null; // Handle missing icons gracefully
+          return (
+            <>
+              <Icon mx={1} key={p.id}>
+                <IconComponent />
+              </Icon>
+            </>
+          );
+        })}
+      </Text>
     </>
   );
 };

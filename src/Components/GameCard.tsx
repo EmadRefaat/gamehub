@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { Game } from "../Hooks/usegames";
 import PlatformIcon from "./PlatformIcon";
+import CriticScore from "./CriticScore";
 
 interface props {
   game: Game;
@@ -23,10 +24,11 @@ const GameCard = ({ game }: props) => {
         </Box>
         <CardTitle fontSize={"sm"}>{game.name}</CardTitle>
         <CardBody>
-          <HStack color={"gray.500"} mt={"0"}>
+          <HStack justifyContent={"space-between"} color={"gray.500"}>
             <PlatformIcon
               platform={game.parent_platforms.map((p) => p.platform)}
             ></PlatformIcon>
+            <CriticScore metacritic={game.metacritic}></CriticScore>
           </HStack>
         </CardBody>
       </CardRoot>
