@@ -19,14 +19,16 @@ interface props {
 const GameCard = ({ game }: props) => {
   return (
     <>
-      <CardRoot overflow={"hidden"}>
+      <CardRoot overflow={"hidden"} width={"300px"}>
         <Box h={"130px"} overflow={"hidden"}>
           <Image
             fit={"contain"}
             src={getCropedImageUrl(game.background_image)}
           ></Image>
         </Box>
-        <CardTitle fontSize={"sm"}>{game.name}</CardTitle>
+        <CardTitle fontSize={"sm"} p={"3"}>
+          {game.name}
+        </CardTitle>
         <CardBody>
           <HStack justifyContent={"space-between"} color={"gray.500"}>
             <PlatformIcon
