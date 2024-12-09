@@ -5,16 +5,16 @@ import GameCardContainer from "./GameCardContainer";
 const SkeletonCard = () => {
   return (
     <>
-      <CardRoot>
-        <GameCardContainer>
+      <GameCardContainer>
+        <CardRoot h={"300px"}>
           <CardHeader>
             <Skeleton></Skeleton>
           </CardHeader>
           <CardBody>
             <SkeletonText noOfLines={3}></SkeletonText>
           </CardBody>
-        </GameCardContainer>
-      </CardRoot>
+        </CardRoot>
+      </GameCardContainer>
     </>
   );
 };

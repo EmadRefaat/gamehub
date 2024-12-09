@@ -14,7 +14,7 @@ const Gamegrid = () => {
       <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={"10px"} p={"10px"}>
         {isloading &&
           skeletonItems.map((item) => (
-            <GridItem key={item} h={"300px"}>
+            <GridItem key={item}>
               <SkeletonCard></SkeletonCard>
             </GridItem>
           ))}

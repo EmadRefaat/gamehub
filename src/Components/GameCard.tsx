@@ -20,8 +20,8 @@ interface props {
 const GameCard = ({ game }: props) => {
   return (
     <>
-      <CardRoot borderRadius={"10px"} overflow={"hidden"}>
-        <GameCardContainer>
+      <GameCardContainer>
+        <CardRoot borderRadius={"10px"} overflow={"hidden"}>
           <Box overflow={"hidden"}>
             <Image
               fit="cover"
@@ -39,8 +39,8 @@ const GameCard = ({ game }: props) => {
               <CriticScore metacritic={game.metacritic}></CriticScore>
             </HStack>
           </CardBody>
-        </GameCardContainer>
-      </CardRoot>
+        </CardRoot>
+      </GameCardContainer>
     </>
   );
 };

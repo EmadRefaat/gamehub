@@ -3,6 +3,7 @@ import useData from "./useData";
 export interface genre {
   id: number;
   name: string;
+  image_background: string;
 }
 
 const usegenres = () => {
