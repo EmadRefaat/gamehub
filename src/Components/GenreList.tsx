@@ -1,9 +1,23 @@
 import usegenres from "../Hooks/usegenres";
-import { Box, HStack, Image, Text } from "@chakra-ui/react";
+import { Box, HStack, Image, Skeleton, Text } from "@chakra-ui/react";
 import getCropedImageUrl from "../services/img-url";
 
 const GenreList = () => {
   const { data, isloading, error } = usegenres();
+
+  if (isloading)
+    return (
+      <>
+        <Skeleton
+          height="20"
+          loading={isloading}
+          variant="pulse"
+          mb="10"
+        ></Skeleton>
+      </>
+    );
+
+  if (error) return null;
   return (
     <>
       <Box as="ul" listStyleType="none">
