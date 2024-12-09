@@ -1,14 +1,12 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import { Button, Grid, GridItem, Show, Text } from "@chakra-ui/react";
+import { Grid, GridItem } from "@chakra-ui/react";
 import Navbar from "./Components/Navbar";
 import Gamegrid from "./Components/Gamegrid";
+import GenreList from "./Components/GenreList";
 
 function App() {
   const [count, setCount] = useState(0);
-
   return (
     <>
       <Grid
@@ -22,7 +20,7 @@ function App() {
         </GridItem>
 
         <GridItem display={{ base: "none", lg: "block" }} area={"aside"}>
-          Sidebar
+          <GenreList></GenreList>
         </GridItem>
 
         <GridItem area={"main"}>

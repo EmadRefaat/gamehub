@@ -20,11 +20,11 @@ interface props {
 const GameCard = ({ game }: props) => {
   return (
     <>
-      <CardRoot>
+      <CardRoot borderRadius={"10px"} overflow={"hidden"}>
         <GameCardContainer>
-          <Box h={"180px"} overflow={"hidden"}>
+          <Box overflow={"hidden"}>
             <Image
-              fit={"contain"}
+              fit="cover"
               src={getCropedImageUrl(game.background_image)}
             ></Image>
           </Box>
