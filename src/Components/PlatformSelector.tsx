@@ -8,16 +8,22 @@ import {
 } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa";
 import useplatforms from "../Hooks/useplatforms";
+import { Platform } from "../Hooks/usegames";
 
-const PlatformSelector = () => {
+interface props {
+  onselectedPlatform: (Platform: Platform) => void;
+  selectedPlatform: Platform | null;
+}
+
+const PlatformSelector = ({ onselectedPlatform, selectedPlatform }: props) => {
   const { data, error } = useplatforms();
-
+  if (error) return null;
   return (
     <>
       <MenuRoot>
         <MenuTrigger asChild>
           <Button variant="outline">
-            Platforms{" "}
+            {selectedPlatform ? selectedPlatform.name : "platforms"}
             <Icon>
               <FaAngleDown />
             </Icon>
@@ -25,7 +31,11 @@ const PlatformSelector = () => {
         </MenuTrigger>
         <MenuContent position="absolute">
           {data.map((p) => (
-            <MenuItem value={p.name} key={p.id}>
+            <MenuItem
+              onClick={() => onselectedPlatform(p)}
+              value={p.name}
+              key={p.id}
+            >
               {p.name}
             </MenuItem>
           ))}
