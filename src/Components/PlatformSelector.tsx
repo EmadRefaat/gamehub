@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Icon,
   MenuContent,
@@ -20,27 +21,29 @@ const PlatformSelector = ({ onselectedPlatform, selectedPlatform }: props) => {
   if (error) return null;
   return (
     <>
-      <MenuRoot>
-        <MenuTrigger asChild>
-          <Button variant="outline">
-            {selectedPlatform ? selectedPlatform.name : "platforms"}
-            <Icon>
-              <FaAngleDown />
-            </Icon>
-          </Button>
-        </MenuTrigger>
-        <MenuContent position="absolute">
-          {data.map((p) => (
-            <MenuItem
-              onClick={() => onselectedPlatform(p)}
-              value={p.name}
-              key={p.id}
-            >
-              {p.name}
-            </MenuItem>
-          ))}
-        </MenuContent>
-      </MenuRoot>
+      <Box position="relative">
+        <MenuRoot>
+          <MenuTrigger asChild>
+            <Button variant="outline">
+              {selectedPlatform ? selectedPlatform.name : "platforms"}
+              <Icon>
+                <FaAngleDown />
+              </Icon>
+            </Button>
+          </MenuTrigger>
+          <MenuContent position="absolute" mt={2}>
+            {data.map((p) => (
+              <MenuItem
+                onClick={() => onselectedPlatform(p)}
+                value={p.name}
+                key={p.id}
+              >
+                {p.name}
+              </MenuItem>
+            ))}
+          </MenuContent>
+        </MenuRoot>
+      </Box>
     </>
   );
 };
