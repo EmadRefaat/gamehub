@@ -13,11 +13,17 @@ import PlatformIcon from "./PlatformIcon";
 import CriticScore from "./CriticScore";
 import getCropedImageUrl from "../services/img-url";
 import GameCardContainer from "./GameCardContainer";
+import { useState } from "react";
 
 interface props {
   game: Game;
 }
 const GameCard = ({ game }: props) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
+
   return (
     <>
       <GameCardContainer>
@@ -28,16 +34,19 @@ const GameCard = ({ game }: props) => {
               src={getCropedImageUrl(game.background_image)}
             ></Image>
           </Box>
-          <CardTitle fontSize={"sm"} p={"3"}>
-            {game.name}
-          </CardTitle>
           <CardBody>
-            <HStack justifyContent={"space-between"} color={"gray.500"}>
+            <HStack justifyContent={"space-between"} mb="2" color={"gray.500"}>
               <PlatformIcon
                 platform={game.parent_platforms.map((p) => p.platform)}
               ></PlatformIcon>
               <CriticScore metacritic={game.metacritic}></CriticScore>
             </HStack>
+            <CardTitle fontSize={"sm"}>
+              {isVisible ? game.name : game.name.slice(0, 30)}{" "}
+              {game.name.length > 30 && (
+                <span onClick={() => toggleVisibility()}>...</span>
+              )}
+            </CardTitle>
           </CardBody>
         </CardRoot>
       </GameCardContainer>

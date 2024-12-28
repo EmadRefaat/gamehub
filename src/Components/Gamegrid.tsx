@@ -16,7 +16,7 @@ const Gamegrid = ({ gameQuery }: props) => {
     <>
       {error && <Box>{error}</Box>}
 
-      <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={"10px"}>
+      <SimpleGrid columns={{ base: 1, md: 2, xl: 4 }} gap={"15px"}>
         {isloading &&
           skeletonItems.map((item) => (
             <GridItem key={item}>

@@ -38,7 +38,7 @@ const PlatformIcon = ({ platform }: props) => {
           const IconComponent = iconMap[p.slug]; // Resolve the icon
           if (!IconComponent) return null; // Handle missing icons gracefully
           return (
-            <Icon mx={1} key={p.id}>
+            <Icon ml={1} key={p.id}>
               <IconComponent />
             </Icon>
           );
