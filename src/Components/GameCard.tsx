@@ -14,6 +14,7 @@ import CriticScore from "./CriticScore";
 import getCropedImageUrl from "../services/img-url";
 import GameCardContainer from "./GameCardContainer";
 import { useState } from "react";
+import Emoji from "./Emoji";
 
 interface props {
   game: Game;
@@ -46,6 +47,7 @@ const GameCard = ({ game }: props) => {
               {game.name.length > 30 && (
                 <span onClick={() => toggleVisibility()}>...</span>
               )}
+              <Emoji rating_top={game.rating_top}></Emoji>
             </CardTitle>
           </CardBody>
         </CardRoot>
