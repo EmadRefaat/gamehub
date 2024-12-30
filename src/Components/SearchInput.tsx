@@ -1,6 +1,5 @@
-import { Box, Group, Input, InputProps } from "@chakra-ui/react";
-import { InputHTMLAttributes, useRef } from "react";
-import { CiSearch } from "react-icons/ci";
+import { Input } from "@chakra-ui/react";
+import { useRef } from "react";
 import styles from "./SearchInput.module.css";
 
 interface props {

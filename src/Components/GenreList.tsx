@@ -6,7 +6,6 @@ import {
   HStack,
   Image,
   Skeleton,
-  Text,
 } from "@chakra-ui/react";
 import getCropedImageUrl from "../services/img-url";
 

@@ -1,6 +1,6 @@
-import { Flex, HStack, Icon, Text } from "@chakra-ui/react";
-import { Game, Platform } from "../Hooks/usegames";
-import { FaPlaystation, FaWindows } from "react-icons/fa";
+import { Icon, Text } from "@chakra-ui/react";
+import { Platform } from "../Hooks/usegames";
+import { FaPlaystation } from "react-icons/fa";
 import { TbDeviceDesktopCog } from "react-icons/tb";
 import { FaXbox } from "react-icons/fa";
 import { IoLogoApple } from "react-icons/io";
@@ -9,7 +9,6 @@ import { BsGlobe, BsNintendoSwitch } from "react-icons/bs";
 
 import { FaLinux } from "react-icons/fa";
 import { MdPhoneIphone } from "react-icons/md";
-import { SiNintendo } from "react-icons/si";
 import { IconType } from "react-icons";
 
 interface props {

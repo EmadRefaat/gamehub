@@ -7,7 +7,6 @@ import {
   MenuRoot,
   MenuTrigger,
 } from "@chakra-ui/react";
-import React from "react";
 import { FaAngleDown } from "react-icons/fa";
 
 interface props {
