@@ -12,13 +12,7 @@ interface props {
   rating_top: number;
 }
 const Emoji = ({ rating_top }: props) => {
-  return (
-    <Image
-      w="30px"
-      src={EmojeMap[rating_top].src}
-      alt={EmojeMap[rating_top].alt}
-    ></Image>
-  );
+  return <Image w="30px" {...EmojeMap[rating_top]}></Image>;
 };
 
 export default Emoji;
