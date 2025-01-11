@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa";
 import useplatforms from "../Hooks/useplatforms";
-import { Platform } from "../Hooks/usegames";
+import { Platform } from "../Hooks/useplatforms";
 
 interface props {
   onselectedPlatform: (Platform: Platform) => void;

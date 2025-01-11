@@ -6,9 +6,10 @@ import Gamegrid from "./Components/Gamegrid";
 import GenreList from "./Components/GenreList";
 import { genre } from "./Hooks/usegenres";
 import PlatformSelector from "./Components/PlatformSelector";
-import { Platform } from "./Hooks/usegames";
+import { Platform } from "./Hooks/useplatforms";
 import SortSelector from "./Components/SortSelector";
 import DynamicHeading from "./Components/DynamicHeading";
+
 export interface Gamequery {
   genre: genre | null;
   platform: Platform | null;
