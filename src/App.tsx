@@ -15,6 +15,7 @@ export interface Gamequery {
   sort: string;
   searchText: string | null;
 }
+
 function App() {
   const [gameQuery, setGameQuery] = useState<Gamequery>({} as Gamequery);
 

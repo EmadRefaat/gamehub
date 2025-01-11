@@ -15,14 +15,14 @@ interface props {
 }
 
 const GenreList = ({ selectedGenre, onSelectedGenre }: props) => {
-  const { data, isloading, error } = usegenres();
+  const { data, error, isLoading } = usegenres();
 
-  if (isloading)
+  if (isLoading)
     return (
       <>
         <Skeleton
           height="20"
-          loading={isloading}
+          loading={isLoading}
           variant="pulse"
           mb="10"
         ></Skeleton>
@@ -36,7 +36,7 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: props) => {
         Genres
       </Heading>
       <Box as="ul" listStyleType="none">
-        {data?.map((genre) => (
+        {data?.results.map((genre) => (
           <Box as="li" key={genre.id} px="5px" overflow="hidden" mb="1">
             <HStack>
               <Box>

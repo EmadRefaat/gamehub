@@ -32,7 +32,7 @@ const PlatformSelector = ({ onselectedPlatform, selectedPlatform }: props) => {
             </Button>
           </MenuTrigger>
           <MenuContent position="absolute" mt={2}>
-            {data.map((p) => (
+            {data?.results.map((p) => (
               <MenuItem
                 onClick={() => onselectedPlatform(p)}
                 value={p.name}
