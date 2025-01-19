@@ -15,6 +15,7 @@ import axios, { AxiosInstance, AxiosRequestConfig } from "axios";
 
 export interface fechResponse<T> {
   count: number;
+  next: string | null;
   results: T[];
 }
 
