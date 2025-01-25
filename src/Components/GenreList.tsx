@@ -11,10 +11,10 @@ import getCropedImageUrl from "../services/img-url";
 
 interface props {
   onSelectedGenre: (genre: genre) => void;
-  selectedGenre: genre | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ selectedGenre, onSelectedGenre }: props) => {
+const GenreList = ({ selectedGenreId, onSelectedGenre }: props) => {
   const { data, error, isLoading } = usegenres();
 
   if (isLoading)
@@ -53,8 +53,8 @@ const GenreList = ({ selectedGenre, onSelectedGenre }: props) => {
                 wordBreak="break-word"
                 onClick={() => onSelectedGenre(genre)}
                 variant={"plain"}
-                fontSize={genre.id === selectedGenre?.id ? "lg" : ""}
-                color={genre.id === selectedGenre?.id ? "gray.400" : ""}
+                fontSize={genre.id === selectedGenreId ? "lg" : ""}
+                color={genre.id === selectedGenreId ? "gray.400" : ""}
               >
                 {genre.name}
               </Button>
