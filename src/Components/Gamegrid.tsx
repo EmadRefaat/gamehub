@@ -1,17 +1,14 @@
 import { Box, GridItem, SimpleGrid } from "@chakra-ui/react";
 import React from "react";
-import { BiLoader } from "react-icons/bi";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Gamequery } from "../App";
 import useGames from "../Hooks/usegames";
 import GameCard from "./GameCard";
 import SkeletonCard from "./SkeletonCard";
 import { FiLoader } from "react-icons/fi";
+import useGamequeryStore from "../Store/store";
 
-interface props {
-  gameQuery: Gamequery;
-}
-const Gamegrid = ({ gameQuery }: props) => {
+const Gamegrid = () => {
+  const { gamequery } = useGamequeryStore();
   const {
     data,
     error,
@@ -19,7 +16,7 @@ const Gamegrid = ({ gameQuery }: props) => {
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
-  } = useGames(gameQuery);
+  } = useGames();
   const skeletonItems = [1, 2, 3, 4, 5, 6, 7, 8];
   const fechedGamesCount =
     data?.pages.reduce(

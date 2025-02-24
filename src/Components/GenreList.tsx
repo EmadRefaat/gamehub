@@ -1,4 +1,4 @@
-import usegenres, { genre } from "../Hooks/usegenres";
+import usegenres from "../Hooks/usegenres";
 import {
   Box,
   Button,
@@ -8,14 +8,11 @@ import {
   Skeleton,
 } from "@chakra-ui/react";
 import getCropedImageUrl from "../services/img-url";
+import useGamequeryStore from "../Store/store";
 
-interface props {
-  onSelectedGenre: (genre: genre) => void;
-  selectedGenreId?: number;
-}
-
-const GenreList = ({ selectedGenreId, onSelectedGenre }: props) => {
+const GenreList = () => {
   const { data, error, isLoading } = usegenres();
+  const { gamequery, setGenreId } = useGamequeryStore();
 
   if (isLoading)
     return (
@@ -51,10 +48,10 @@ const GenreList = ({ selectedGenreId, onSelectedGenre }: props) => {
                 whiteSpace="normal"
                 textAlign="start"
                 wordBreak="break-word"
-                onClick={() => onSelectedGenre(genre)}
+                onClick={() => setGenreId(genre.id)}
                 variant={"plain"}
-                fontSize={genre.id === selectedGenreId ? "lg" : ""}
-                color={genre.id === selectedGenreId ? "gray.400" : ""}
+                fontSize={genre.id === gamequery.genre_id ? "lg" : ""}
+                color={genre.id === gamequery.genre_id ? "gray.400" : ""}
               >
                 {genre.name}
               </Button>

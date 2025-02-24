@@ -1,12 +1,10 @@
 import { Input } from "@chakra-ui/react";
 import { useRef } from "react";
 import styles from "./SearchInput.module.css";
+import useGamequeryStore from "../Store/store";
 
-interface props {
-  onSearch: (searchText: string) => void;
-}
-
-const SearchInput = ({ onSearch }: props) => {
+const SearchInput = () => {
+  const { setSearchText } = useGamequeryStore();
   const ref = useRef<HTMLInputElement>(null);
   return (
     <form
@@ -20,7 +18,7 @@ const SearchInput = ({ onSearch }: props) => {
         placeholder={` search games ... `}
         w="full"
         borderRadius={20}
-        onChange={(e) => onSearch(e.currentTarget.value)}
+        onChange={(e) => setSearchText(e.currentTarget.value)}
       ></Input>
     </form>
   );

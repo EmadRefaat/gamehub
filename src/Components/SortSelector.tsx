@@ -8,12 +8,11 @@ import {
   MenuTrigger,
 } from "@chakra-ui/react";
 import { FaAngleDown } from "react-icons/fa";
+import useGamequeryStore from "../Store/store";
 
-interface props {
-  onSelectSort: (selectedOrder: string) => void;
-  sortOrder: string;
-}
-const SortSelector = ({ onSelectSort, sortOrder }: props) => {
+const SortSelector = () => {
+  const { setSort, gamequery } = useGamequeryStore();
+
   const sortList = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date added" },
@@ -23,7 +22,9 @@ const SortSelector = ({ onSelectSort, sortOrder }: props) => {
     { value: "-rating", label: "Average reating" },
   ];
 
-  const currentSortOrder = sortList.find((order) => order.value === sortOrder);
+  const currentSortOrder = sortList.find(
+    (order) => order.value === gamequery.sort
+  );
   return (
     <>
       <Box position={"relative"}>
@@ -31,9 +32,9 @@ const SortSelector = ({ onSelectSort, sortOrder }: props) => {
           <MenuTrigger>
             <Button variant="outline">
               Order by:{currentSortOrder ? currentSortOrder.label : "Relevance"}
-              <Icon>
+              {/* <Icon>
                 <FaAngleDown />
-              </Icon>
+              </Icon> */}
             </Button>
           </MenuTrigger>
           <MenuContent position={"absolute"} mt={2}>
@@ -41,7 +42,7 @@ const SortSelector = ({ onSelectSort, sortOrder }: props) => {
               <MenuItem
                 key={item.value}
                 value={item.value}
-                onClick={() => onSelectSort(item.value)}
+                onClick={() => setSort(item.value)}
               >
                 {item.label}
               </MenuItem>
