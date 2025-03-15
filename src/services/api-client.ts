@@ -36,6 +36,10 @@ class apiClient<T> {
       .get<fechResponse<T>>(this.endPoint, config)
       .then((res) => res.data);
   };
+
+  get = (id: string | number) => {
+    return req.get<T>(this.endPoint + "/" + id).then((res) => res.data);
+  };
 }
 
 export default apiClient;
