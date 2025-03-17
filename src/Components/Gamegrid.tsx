@@ -5,15 +5,13 @@ import useGames from "../Hooks/usegames";
 import GameCard from "./GameCard";
 import SkeletonCard from "./SkeletonCard";
 import { FiLoader } from "react-icons/fi";
-import useGamequeryStore from "../Store/store";
 
 const Gamegrid = () => {
-  const { gamequery } = useGamequeryStore();
   const {
     data,
     error,
     isLoading,
-    isFetchingNextPage,
+
     fetchNextPage,
     hasNextPage,
   } = useGames();

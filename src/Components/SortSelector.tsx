@@ -1,13 +1,11 @@
 import {
   Box,
   Button,
-  Icon,
   MenuContent,
   MenuItem,
   MenuRoot,
   MenuTrigger,
 } from "@chakra-ui/react";
-import { FaAngleDown } from "react-icons/fa";
 import useGamequeryStore from "../Store/store";
 
 const SortSelector = () => {

@@ -1,13 +1,12 @@
 import {
   Box,
   Button,
-  Icon,
   MenuContent,
   MenuItem,
   MenuRoot,
   MenuTrigger,
 } from "@chakra-ui/react";
-import { FaAngleDown } from "react-icons/fa";
+
 import useplatforms from "../Hooks/useplatforms";
 import useGamequeryStore from "../Store/store";
 
