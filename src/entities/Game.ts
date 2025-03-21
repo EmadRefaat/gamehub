@@ -8,6 +8,7 @@ export interface Game {
   name: string;
   publishers: Publisher[];
   slug?: string;
+
   genres: genre[];
   background_image: string;
   parent_platforms: { platform: Platform }[];
