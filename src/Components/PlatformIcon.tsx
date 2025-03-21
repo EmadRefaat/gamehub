@@ -1,5 +1,5 @@
 import { Icon, Text } from "@chakra-ui/react";
-import { Platform } from "../entities/Platform";
+import Platform from "../entities/Platform";
 import { FaPlaystation } from "react-icons/fa";
 import { TbDeviceDesktopCog } from "react-icons/tb";
 import { FaXbox } from "react-icons/fa";

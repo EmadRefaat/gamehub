@@ -13,8 +13,8 @@ import GameCardContainer from "./GameCardContainer";
 import { useState } from "react";
 import Emoji from "./Emoji";
 import { Link } from "react-router-dom";
-import { Game } from "../entities/Game";
-import { Platform } from "../entities/Platform";
+import Game from "../entities/Game";
+import Platform from "../entities/Platform";
 
 interface props {
   game: Game;
