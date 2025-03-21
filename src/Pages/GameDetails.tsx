@@ -6,6 +6,8 @@ import ExpandText from "../Components/ExpandText";
 import DifinitionItem from "../Components/DifinitionItem";
 import CriticScore from "../Components/CriticScore";
 import GameAttribute from "../Components/GameAttribute";
+import usegametrailer from "../Hooks/usegametrailer";
+import GameTrailer from "../Components/GameTrailer";
 
 const GameDetails = () => {
   const { slug } = useParams();
@@ -19,6 +21,7 @@ const GameDetails = () => {
       <Heading> {game?.name}</Heading>
       <ExpandText>{game?.description_raw || ""}</ExpandText>
       <GameAttribute game={game} />
+      <GameTrailer gameId={game.id} />
     </>
   );
 };
