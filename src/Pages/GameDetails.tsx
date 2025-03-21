@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import usegame from "../Hooks/usegame";
 import { FiLoader } from "react-icons/fi";
-import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { GridItem, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import ExpandText from "../Components/ExpandText";
 import DifinitionItem from "../Components/DifinitionItem";
 import CriticScore from "../Components/CriticScore";
@@ -19,11 +19,17 @@ const GameDetails = () => {
 
   return (
     <>
-      <Heading> {game?.name}</Heading>
-      <ExpandText>{game?.description_raw || ""}</ExpandText>
-      <GameAttribute game={game} />
-      <GameTrailer gameId={game.id} />
-      <GameScreenshots id={game.id} />
+      <SimpleGrid gap={2} columns={{ md: 2, base: 1 }}>
+        <GridItem>
+          <Heading> {game?.name}</Heading>
+          <ExpandText>{game?.description_raw || ""}</ExpandText>
+          <GameAttribute game={game} />
+        </GridItem>
+        <GridItem>
+          <GameTrailer gameId={game.id} />
+          <GameScreenshots id={game.id} />
+        </GridItem>
+      </SimpleGrid>
     </>
   );
 };

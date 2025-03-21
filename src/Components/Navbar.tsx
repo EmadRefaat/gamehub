@@ -2,13 +2,16 @@ import { Box, HStack, Image } from "@chakra-ui/react";
 import logo from "../assets/logo.webp";
 import { ColorModeButton } from "./ui/color-mode";
 import SearchInput from "./SearchInput";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <>
       <HStack justifyContent={"space-between"} p="10px">
         <Box>
-          <Image src={logo} boxSize={"60px"}></Image>
+          <NavLink to="/">
+            <Image src={logo} boxSize={"60px"} objectFit={"cover"}></Image>
+          </NavLink>
         </Box>
         <SearchInput></SearchInput>
         <Box>
