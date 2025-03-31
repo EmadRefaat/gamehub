@@ -1,12 +1,9 @@
 import { useParams } from "react-router-dom";
 import usegame from "../Hooks/usegame";
 import { FiLoader } from "react-icons/fi";
-import { GridItem, Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { GridItem, Heading, SimpleGrid } from "@chakra-ui/react";
 import ExpandText from "../Components/ExpandText";
-import DifinitionItem from "../Components/DifinitionItem";
-import CriticScore from "../Components/CriticScore";
 import GameAttribute from "../Components/GameAttribute";
-import usegametrailer from "../Hooks/usegametrailer";
 import GameTrailer from "../Components/GameTrailer";
 import GameScreenshots from "../Components/GameScreenshots";
 
